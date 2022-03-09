@@ -97,10 +97,10 @@ DUPEFILTER_CLASS = 'scrapy_redis.dupefilter.RFPDupeFilter'
 SCHEDULER_PERSIST = True  # 分布式爬虫中途退出是否保留请求信息
 
 # redis 连接
-REDIS_HOST = '39.107.236.184'
+REDIS_HOST = 'redis服务器地址'
 REDIS_PORT = '6379'
 REDIS_PARAMS = {
-    'password': 'wen521wen',
+    'password': '密码',
 }
 
 # mongo 连接
