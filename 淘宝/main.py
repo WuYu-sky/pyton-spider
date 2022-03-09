@@ -11,18 +11,21 @@ class TaoBao:
     def __init__(self, session):
         self.session = session
         
+        # 店铺全部商品的列表
         self.list_url = 'https://beihuanjj.tmall.com/i/asynSearch.htm?mid=w-23290845082-0'
         
+        # 商品名称
         self.file_name = ''
 
     def get_html(self, url):
         resp = self.session.get(url)
         return resp
-
+    
+    # 下边的逻辑需要根据你想爬取的网站更改
     def get_name(self, commodity_html):
         name = re.findall(r'<meta name="keywords" content="(.*?)"', commodity_html)[0]
         return name
-
+   
     def get_preview_img(self, selector):
         preview_list = selector.css('#J_UlThumb li')
         for index, preview in enumerate(preview_list):
@@ -69,7 +72,7 @@ class TaoBao:
 
 
 if __name__ == '__main__':
-    s = SeleniumGetCookies('1642067392@qq.com', 'wen521wen')
+    s = SeleniumGetCookies(账号，密码)
     session = s.run()
     t = TaoBao(session)
     t.extract_url()
